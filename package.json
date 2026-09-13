@@ -1,0 +1,22 @@
+{
+  "name": "economy-bot",
+  "version": "1.0.0",
+  "description": "Bot de economia para Discord com painel web e sistema de Premium por servidor",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "register": "node src/deploy-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

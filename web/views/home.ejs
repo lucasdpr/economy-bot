@@ -1,0 +1,68 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <h1>Uma economia divertida <span class="grad">para o seu servidor Discord</span></h1>
+  <p>Carteira, banco, loja com cargos, roubo, ranking e um site completo para acompanhar tudo — sem precisar mexer em nada além de convidar o bot.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="<%= invite %>">➕ Adicionar ao servidor</a>
+    <a class="btn btn-secondary" href="/dashboard">🛠️ Ver meu painel</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n"><%= serverCount %></div><div class="l">servidores usando</div></div>
+    <div class="stat"><div class="n"><%= userCount.toLocaleString('pt-BR') %></div><div class="l">membros alcançados</div></div>
+    <div class="stat"><div class="n"><%= premiumCount %></div><div class="l">servidores Premium</div></div>
+  </div>
+</section>
+
+<section class="section" id="recursos">
+  <h2 class="section-title">O que o bot faz</h2>
+  <p class="section-sub">Comandos de barra (/) prontos, além de um site para configurar tudo visualmente.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>💰 Economia completa</h3>
+      <p>Carteira, banco com proteção contra roubo, recompensa diária, trabalho e transferências entre membros.</p>
+    </div>
+    <div class="card">
+      <h3>🛒 Loja personalizada</h3>
+      <p>Cadastre itens que entregam cargos automaticamente ao comprar — cada servidor tem a sua própria loja.</p>
+    </div>
+    <div class="card">
+      <h3>🏆 Ranking e roubo</h3>
+      <p>Ranking público dos mais ricos e a possibilidade de tentar roubar outros membros (com risco de multa).</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Painel web</h3>
+      <p>Administradores fazem login com o Discord e gerenciam a loja, moeda e veem estatísticas pelo navegador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="premium">
+  <h2 class="section-title">Planos</h2>
+  <p class="section-sub">Comece de graça. Libere mais recursos com o Premium quando quiser.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="badge badge-free">Grátis</span>
+      <h3>Para começar</h3>
+      <ul>
+        <li>Todos os comandos de economia</li>
+        <li>Até 5 itens na loja</li>
+        <li>Ranking e painel público</li>
+      </ul>
+    </div>
+    <div class="card premium">
+      <span class="badge badge-gold">Premium</span>
+      <h3>Para servidores que querem mais</h3>
+      <ul>
+        <li>Recompensas diárias e de trabalho maiores</li>
+        <li>Juros diários automáticos no banco</li>
+        <li>Até 50 itens na loja</li>
+        <li>Nome e símbolo da moeda personalizados</li>
+      </ul>
+      <p style="color:var(--text-dim); font-size:0.85rem; margin-top:16px;">Fale com quem administra este bot para ativar o Premium no seu servidor.</p>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

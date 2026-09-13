@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= typeof title !== 'undefined' ? title : 'Economia Bot' %> · Economia Bot</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="brand"><span class="dot"></span> Economia Bot</a>
+      <div class="nav-links">
+        <a href="/#recursos" class="hide-mobile">Recursos</a>
+        <a href="/#premium" class="hide-mobile">Premium</a>
+        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+          <a href="/dashboard">Meus servidores</a>
+          <div class="user-chip">
+            <img src="<%= currentUser.avatar %>" alt="" />
+            <span><%= currentUser.username %></span>
+            <a href="/auth/logout" style="margin-left:6px;color:var(--text-dim)">Sair</a>
+          </div>
+        <% } else { %>
+          <a href="/auth/login" class="btn btn-secondary btn-sm">Entrar com Discord</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  <main class="container" style="flex:1; padding-top: 8px; padding-bottom: 48px;">

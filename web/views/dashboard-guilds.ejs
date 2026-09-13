@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<h1 style="margin-top:32px;">Meus servidores</h1>
+<p style="color:var(--text-dim)">Servidores onde você é administrador. Selecione um para gerenciar a economia.</p>
+
+<% if (guilds.length === 0) { %>
+  <div class="empty-state">Você não administra nenhum servidor com este bot. Adicione o bot a um servidor onde você é admin.</div>
+<% } else { %>
+  <ul class="list-flat" style="margin-top:24px;">
+    <% guilds.forEach(function(g) { %>
+      <li class="row">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="<%= g.icon ? `https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png' %>" style="width:36px;height:36px;border-radius:10px;" alt="" />
+          <strong><%= g.name %></strong>
+        </div>
+        <% if (g.botPresent) { %>
+          <a class="btn btn-primary btn-sm" href="/dashboard/<%= g.id %>">Gerenciar</a>
+        <% } else { %>
+          <span class="badge badge-free">Bot não está aqui</span>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- include('partials/footer') %>
